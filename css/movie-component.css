@@ -5,7 +5,6 @@
 }
 
 .movie__box{
-    background-color: wheat;
     justify-content: center;
     margin: 2rem;
     height: 25rem;
@@ -13,7 +12,6 @@
 }
 
 .movies__img{
-    background-color: green;
     height: 87%;
     width: 100%;
 }
