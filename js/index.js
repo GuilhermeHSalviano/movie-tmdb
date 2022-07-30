@@ -6,7 +6,6 @@ function request (){
         headers:{
             'Content-Type': 'application/json;charset=utf-8'
         }
-
     })
     
 }
@@ -17,11 +16,13 @@ function request (){
     console.log(apiResponse)
     for(let a = 1; a < 7; a++){
         const elements = getFolder(a)
+        const t = apiResponse.results[a].vote_average
         elements.movieName.innerHTML = apiResponse.results[a].original_title
-        elements.movieYear.innerHTML = apiResponse.results[a].release_date
+        elements.movieYear.innerHTML = apiResponse.results[a].release_date.slice(0,4)
         elements.movieLikes.innerHTML = apiResponse.results[a].vote_average
         elements.movieName.innerHTML = apiResponse.results[a].original_title
         elements.movieImg.src = `https://image.tmdb.org/t/p/w500${apiResponse.results[a].poster_path}`
+        elements.movieName.dataset.id = apiResponse.results[a].id
     }
 }) ()
 
